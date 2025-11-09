@@ -14,9 +14,7 @@ import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { fetchProjects } from "../../projects/projectsSlice";
 import notify from "devextreme/ui/notify";
 import api from "../../../services/api";
-// import { ValidationGroup } from "devextreme-react/validation-group";
-import { ValidationGroup } from "devextreme-react/validation-group";
-import ValidationGroupType from "devextreme/ui/validation_group";
+
 interface TaskFormProps {
   task?: any;
   onClose: (refresh: boolean) => void;
@@ -144,10 +142,7 @@ const TaskForm = ({ task, onClose, editMode }: TaskFormProps) => {
     name: p.name,
   }));
 
-  const usersData = users.map((u) => ({
-    id: u.id,
-    fullName: u.fullName,
-  }));
+
 
   const checkDuplicates = () => {
     // Filter tasks by selected project

@@ -7,7 +7,8 @@ export interface Project {
   status: 'Planning' | 'Active' | 'On Hold' | 'Completed' | 'Cancelled';
   createdById: string;
   createdBy?: string;
-  
+  ownerId?:number
+
 
 }
 

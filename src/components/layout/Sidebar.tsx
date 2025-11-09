@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { TreeView } from "devextreme-react/tree-view";
 
 interface SidebarProps {
@@ -9,7 +9,6 @@ interface SidebarProps {
 
 const Sidebar = ({ collapsed }: SidebarProps) => {
   const navigate = useNavigate();
-  const location = useLocation();
   
 
   const navigationItems = [

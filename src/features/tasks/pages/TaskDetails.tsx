@@ -538,7 +538,6 @@ import notify from "devextreme/ui/notify";
 import { confirm } from "devextreme/ui/dialog";
 import api from "../../../services/api";
 import { fetchProjects } from "../../projects/projectsSlice";
-import { fetchProjectDetails } from "../../projects/projectsSlice";
 
 import {
   getPriorityLabel,

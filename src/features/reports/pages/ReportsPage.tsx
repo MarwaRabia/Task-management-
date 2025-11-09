@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import {
   fetchAllReports,
-  fetchOverdueTasks,
+  
   setFilters,
   clearFilters,
 } from "../reportsSlice";
@@ -81,9 +81,6 @@ const ReportsPage = () => {
     notify("Data refreshed", "success", 1500);
   };
 
-  const handlePageChange = (page: number) => {
-    dispatch(fetchOverdueTasks({ page, pageSize: 10 }));
-  };
 
   // Generate months and years for filters
   const months = [

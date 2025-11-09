@@ -122,17 +122,6 @@ const Dashboard = () => {
     }
   };
 
-  const getStatusLabel = (status: string | number) => {
-    const statusMap: Record<string, string> = {
-      "1": "To Do",
-      "2": "In Progress",
-      "3": "Done",
-      Todo: "To Do",
-      InProgress: "In Progress",
-      Done: "Done",
-    };
-    return statusMap[String(status)] || String(status);
-  };
 
   const getPriorityLabel = (priority: string | number) => {
     const priorityMap: Record<string, string> = {

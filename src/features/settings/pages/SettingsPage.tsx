@@ -9,7 +9,7 @@ import { RadioGroup } from "devextreme-react/radio-group";
 import { LoadPanel } from "devextreme-react/load-panel";
 import notify from "devextreme/ui/notify";
 import { confirm } from "devextreme/ui/dialog";
-import api from "../../../services/api";
+
 import "./SettingsPage.css";
 import { useTheme } from "../../../hooks/useTheme";
 
@@ -77,7 +77,7 @@ const SettingsPage = () => {
     setLoading(true);
     try {
       // Load from localStorage or API
-      const savedTheme = localStorage.getItem("theme") as any;
+     
       // if (savedTheme) setTheme(savedTheme);
 
       const savedLanguage = localStorage.getItem("language");
