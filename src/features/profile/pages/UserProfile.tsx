@@ -66,6 +66,7 @@ const UserProfile = () => {
     // Build full URL from relative path
     const baseUrl =
       api.defaults.baseURL?.replace("/api", "") || "http://localhost:5163";
+      console.log("`${baseUrl}${imagePath}`",`${baseUrl}${imagePath}`)
     return `${baseUrl}${imagePath}`;
   };
 

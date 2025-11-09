@@ -10,7 +10,7 @@ import { DataGrid, Column } from "devextreme-react/data-grid";
 import { Button } from "devextreme-react/button";
 import { LoadPanel } from "devextreme-react/load-panel";
 import api from "../../../services/api";
-import "./Dashboard.css";
+import "./dashboard.css";
 import type { DashboardStats } from "../../../types/dashboard.types";
 
 const Dashboard = () => {

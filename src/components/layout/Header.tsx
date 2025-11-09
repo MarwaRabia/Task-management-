@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // import { useNavigate } from 'react-router-dom';
 // import { Button } from 'devextreme-react/button';
 // import { DropDownButton } from 'devextreme-react/drop-down-button';
@@ -96,6 +97,7 @@ import { logout } from '../../features/auth/authSlice';
 import notify from 'devextreme/ui/notify';
 import './Header.css';
 import NotificationsBell from '../../features/notifications/components/NotificationsBell';
+import api from '../../services/api';
 
 interface HeaderProps {
   onToggleSidebar: () => void;
@@ -110,6 +112,8 @@ const Header = ({ onToggleSidebar }: HeaderProps) => {
   const avatarUrl = user?.profileImage 
     ? `http://localhost:5163${user.profileImage}` 
     : null;
+
+    // console.log("hhhhhhhhhh",api.get(`${user.profileImage}`))
 
   const handleLogout = () => {
     dispatch(logout());
