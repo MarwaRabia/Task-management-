@@ -1,0 +1,239 @@
+.settings-page-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.settings-header {
+  margin-bottom: 32px;
+}
+
+.settings-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.page-subtitle {
+  margin: 0;
+  color: #666;
+  font-size: 15px;
+}
+
+.settings-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Tab Styles */
+.tab-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+}
+
+.tab-title i {
+  font-size: 18px;
+}
+
+/* Settings Tab Content */
+.settings-tab {
+  padding: 32px;
+}
+
+.settings-section {
+  margin-bottom: 40px;
+}
+
+.settings-section:last-child {
+  margin-bottom: 0;
+}
+
+.settings-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.section-description {
+  margin: 0 0 20px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Setting Item */
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-info {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.setting-info strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.setting-info p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.field-hint {
+  margin: 6px 0 0 0;
+  font-size: 12px;
+  color: #999;
+}
+
+/* Theme Selector */
+.theme-selector {
+  margin-top: 16px;
+}
+
+.dx-radiogroup-horizontal .dx-radiobutton {
+  margin-right: 24px;
+}
+
+/* Action Group */
+.action-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.action-group strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.action-group p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.action-group.danger {
+  background: #fff5f5;
+  border: 1px solid #fee;
+}
+
+.action-group.danger strong {
+  color: #dc3545;
+}
+
+/* Settings Actions */
+.settings-actions {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  gap: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .settings-page-container {
+    padding: 16px;
+  }
+
+  .settings-tab {
+    padding: 20px;
+  }
+
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .setting-info {
+    padding-right: 0;
+  }
+
+  .action-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .action-group button {
+    width: 100%;
+  }
+
+  .settings-actions {
+    flex-direction: column;
+  }
+
+  .settings-actions button {
+    width: 100%;
+  }
+}
+
+/* DevExtreme Overrides */
+.dx-tabpanel .dx-tabs {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.dx-tabpanel .dx-tab {
+  padding: 16px 24px;
+}
+
+.dx-tabpanel .dx-tab-selected {
+  color: #667eea;
+  border-bottom: 2px solid #667eea;
+}
+
+.dx-switch-on-value .dx-switch-handle:before {
+  background-color: #667eea;
+}
+
+.dx-selectbox,
+.dx-textbox {
+  min-width: 250px;
+}
+
+@media (max-width: 768px) {
+  .dx-selectbox,
+  .dx-textbox {
+    min-width: 100%;
+  }
+}
