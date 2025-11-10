@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import api from '../../services/api';
 import * as signalR from '@microsoft/signalr';
 
 class SignalRService {
@@ -10,9 +12,9 @@ class SignalRService {
       console.log('SignalR already connected');
       return;
     }
-
+ const baseUrl=api.defaults.baseURL?.replace("api",'');
     this.connection = new signalR.HubConnectionBuilder()
-      .withUrl('https://localhost:5001/notificationHub', {
+      .withUrl(`${baseUrl}/notificationHub`, {
         accessTokenFactory: () => token,
         transport: signalR.HttpTransportType.WebSockets | signalR.HttpTransportType.LongPolling,
       })

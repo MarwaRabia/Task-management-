@@ -751,7 +751,9 @@ const TaskDetails = () => {
       const token = localStorage.getItem('token'); // Adjust based on where you store your token
       
       // Use fetch with authorization header
-      const response = await fetch(`http://localhost:5163/api/files/${fileId}/download`, {
+        const baseUrl=api.defaults.baseURL;
+    
+      const response = await fetch(`${baseUrl}/files/${fileId}/download`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,

@@ -1280,6 +1280,7 @@ const TeamPage = () => {
       </div>
     );
   };
+    // const baseUrl=api.defaults.baseURL?.replace("api",'');
 
   const renderNameCell = (data: any) => {
     return (
@@ -1290,7 +1291,8 @@ const TeamPage = () => {
         <div className="user-avatar">
           {data.data.profileImage ? (
             <img
-              src={`http://localhost:5163${data.data.profileImage}`}
+              // src={`http://localhost:5163${data.data.profileImage}`}
+              src={`https://taskmanagementsystemapp.runasp.net${data.data.profileImage}`}
               className="user-avatar-img"
             />
           ) : (

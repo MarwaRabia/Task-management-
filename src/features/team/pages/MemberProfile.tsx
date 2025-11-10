@@ -165,6 +165,7 @@ const MemberProfile = () => {
       </span>
     );
   };
+    // const baseUrl=api.defaults.baseURL?.replace("api",'');
 
 
   return (
@@ -188,7 +189,7 @@ const MemberProfile = () => {
             {/* {member.fullName.charAt(0).toUpperCase()} */}
             {member.profileImage ? (
               <img
-                src={`http://localhost:5163${member.profileImage}`}
+                src={`https://taskmanagementsystemapp.runasp.net${member.profileImage}`}
                 className="user-avatar-img"
               />
             ) : (

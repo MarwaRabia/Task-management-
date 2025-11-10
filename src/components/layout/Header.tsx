@@ -107,10 +107,13 @@ const Header = ({ onToggleSidebar }: HeaderProps) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { user } = useAppSelector((state) => state.auth);
+ 
   
   // Build full avatar URL
+  const baseUrl=api.defaults.baseURL?.replace("api",'');
+  
   const avatarUrl = user?.profileImage 
-    ? `http://localhost:5163${user.profileImage}` 
+    ? `${baseUrl}${user.profileImage}` 
     : null;
 
     // console.log("hhhhhhhhhh",api.get(`${user.profileImage}`))
