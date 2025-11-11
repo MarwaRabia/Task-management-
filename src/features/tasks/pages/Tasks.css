@@ -1,51 +1,70 @@
+/* ========================================
+   Base Styles - Tasks Container
+   ======================================== */
+
 .tasks-container {
-  /* max-width: 1400px; */
-   width: 100%;
-  padding: 0 20px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(12px, 3vw, 20px);
   box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Header - Fully Responsive */
 .tasks-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: clamp(16px, 3vw, 20px);
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .tasks-header h1 {
-  font-size: 32px;
+  font-size: clamp(24px, 5vw, 32px);
   font-weight: 600;
   color: #333;
   margin: 0 0 8px 0;
+  line-height: 1.2;
 }
 
 .page-subtitle {
   color: #666;
   margin: 0;
-  font-size: 16px;
+  font-size: clamp(14px, 3vw, 16px);
 }
 
-/* Custom Tabs */
+/* ========================================
+   Custom Tabs - Responsive
+   ======================================== */
+
 .tabs-container {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: clamp(8px, 2vw, 10px);
+  margin-bottom: clamp(16px, 3vw, 20px);
   background: white;
-  padding: 10px;
-  border-radius: 12px;
+  padding: clamp(8px, 2vw, 10px);
+  border-radius: clamp(8px, 1.5vw, 12px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%; /* Prevent overflow */
 }
 
 .tab-button {
-  padding: 12px 24px;
+  padding: clamp(10px, 2vw, 12px) clamp(16px, 3vw, 24px);
   border: none;
   background: transparent;
   color: #666;
-  font-size: 14px;
+  font-size: clamp(13px, 2.5vw, 14px);
   font-weight: 500;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: clamp(6px, 1.5vw, 8px);
   transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 40px;
 }
 
 .tab-button:hover {
@@ -55,56 +74,199 @@
 .tab-button.active {
   background: #667eea;
   color: white;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
 
-/* Filters */
+/* ========================================
+   Filters - Mobile First
+   ======================================== */
+
 .filters-container {
   background: white;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 20px;
+  border-radius: clamp(8px, 1.5vw, 12px);
+  padding: clamp(12px, 3vw, 20px);
+  margin-bottom: clamp(16px, 3vw, 20px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  max-width: 100%; /* Prevent overflow */
+  overflow: hidden;
 }
 
 .filters-row {
   display: flex;
-  gap: 15px;
+  gap: clamp(10px, 2.5vw, 15px);
   flex-wrap: wrap;
   align-items: center;
 }
 
-/* Grid Container */
+.filters-row > * {
+  flex: 1 1 auto;
+  min-width: min(150px, 100%);
+  max-width: 100%; /* Prevent overflow */
+}
+
+/* ========================================
+   Grid Container - Fixed Width Issue
+   ======================================== */
+
 .tasks-grid-container {
   background: white;
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: clamp(8px, 1.5vw, 12px);
+  padding: clamp(12px, 3vw, 20px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-   width: 100%;
+  width: 100%;
+  max-width: 100%; /* FIXED: Prevent overflow */
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box; /* FIXED: Include padding in width */
 }
+
+/* ========================================
+   Action Buttons - Touch Friendly
+   ======================================== */
 
 .action-buttons {
   display: flex;
-  gap: 8px;
+  gap: clamp(6px, 1.5vw, 8px);
   justify-content: center;
+  flex-wrap: nowrap; /* Keep buttons beside each other */
 }
 
-.task-form {
-  padding: 20px;
+.action-buttons .dx-button {
+  min-width: 32px;
+  min-height: 32px;
 }
+
+/* ========================================
+   Task Form - Responsive
+   ======================================== */
+
+.task-form {
+  width: 100%;
+  max-width: 100%;
+  padding: clamp(12px, 2.5vw, 20px);
+  background: white;
+  border-radius: clamp(8px, 1.5vw, 12px);
+  box-sizing: border-box;
+}
+
+.task-form .dx-field-item {
+  margin-bottom: clamp(12px, 2.5vw, 20px);
+  padding: 0;
+}
+
+.task-form .dx-field-item:last-child {
+  margin-bottom: 0;
+}
+
+.task-form .dx-field-item-label {
+  padding-bottom: 6px;
+}
+
+.task-form .dx-field-item-label-text {
+  font-size: clamp(12px, 2.5vw, 14px);
+  font-weight: 600;
+  color: #333;
+  line-height: 1.3;
+}
+
+.task-form .dx-textbox,
+.task-form .dx-datebox,
+.task-form .dx-selectbox,
+.task-form .dx-textarea {
+  width: 100%;
+  border-radius: 6px;
+  min-height: 40px;
+}
+
+.task-form .dx-texteditor-input {
+  font-size: clamp(13px, 2.5vw, 15px);
+  padding: clamp(8px, 1.5vw, 12px);
+  line-height: 1.4;
+}
+
+.task-form .dx-textarea .dx-texteditor-input {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.task-form .dx-texteditor.dx-state-focused {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.task-form .dx-group-colcount-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: clamp(12px, 2.5vw, 16px);
+}
+
+/* ========================================
+   Form Buttons Container
+   ======================================== */
 
 .form-buttons {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
-  margin-top: 30px;
-  padding-top: 20px;
+  gap: clamp(8px, 2vw, 10px);
+  margin-top: clamp(16px, 3vw, 24px);
+  padding-top: clamp(12px, 2.5vw, 20px);
   border-top: 1px solid #e0e0e0;
+  flex-wrap: wrap;
 }
 
-/* DataGrid Customization */
+.form-buttons .dx-button {
+  min-width: clamp(90px, 18vw, 120px);
+  min-height: 40px;
+  border-radius: 6px;
+  font-size: clamp(13px, 2.5vw, 15px);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  padding: clamp(6px, 1.5vw, 10px) clamp(14px, 2.5vw, 20px);
+}
+
+.form-buttons .dx-button:first-child:not(.dx-button-default) {
+  background-color: #f5f5f5;
+  border: 1px solid #d9d9d9;
+  color: #595959;
+}
+
+.form-buttons .dx-button:first-child:hover:not(.dx-state-disabled):not(.dx-button-default) {
+  background-color: #e8e8e8;
+  border-color: #bfbfbf;
+}
+
+.form-buttons .dx-button.dx-button-default {
+  background-color: #667eea;
+  border: 1px solid #667eea;
+  color: white;
+}
+
+.form-buttons .dx-button.dx-button-default:hover:not(.dx-state-disabled) {
+  background-color: #5568d3;
+  border-color: #5568d3;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.task-form .dx-field-item-required-mark {
+  color: #d32f2f;
+  font-size: clamp(14px, 2.5vw, 16px);
+  margin-left: 4px;
+}
+
+.task-form .dx-invalid-message {
+  font-size: clamp(11px, 2vw, 12px);
+  color: #d32f2f;
+  margin-top: 4px;
+  padding: 4px 0;
+}
+
+/* ========================================
+   DataGrid Customization
+   ======================================== */
+
 .dx-datagrid {
   border: none !important;
+  font-size: clamp(12px, 2.5vw, 14px);
 }
 
 .dx-datagrid-headers {
@@ -121,21 +283,671 @@
   background-color: #f5f5f5 !important;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+.dx-datagrid-rowsview .dx-row > td {
+  padding: clamp(8px, 2vw, 12px);
+  white-space: nowrap;
+}
+
+.dx-datagrid-rowsview .dx-row {
+  min-height: 44px;
+}
+
+/* ========================================
+   Scrollbar Styling
+   ======================================== */
+
+.tasks-grid-container::-webkit-scrollbar,
+.dx-datagrid-rowsview .dx-scrollable-container::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.tasks-grid-container::-webkit-scrollbar-track,
+.dx-datagrid-rowsview .dx-scrollable-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.tasks-grid-container::-webkit-scrollbar-thumb,
+.dx-datagrid-rowsview .dx-scrollable-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.tasks-grid-container::-webkit-scrollbar-thumb:hover,
+.dx-datagrid-rowsview .dx-scrollable-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ========================================
+   Popup Styles - FIXED for Mobile
+   ======================================== */
+
+.dx-popup-content .task-form {
+  padding: clamp(12px, 3vw, 20px);
+}
+
+.dx-popup-title {
+  font-size: clamp(16px, 3.5vw, 20px);
+  font-weight: 600;
+  padding: clamp(12px, 2.5vw, 16px);
+}
+
+/* FIXED: Filter Popup - Prevent overflow */
+.dx-overlay-content.dx-popup-normal {
+  max-width: min(600px, 95vw) !important;
+  max-height: 90vh !important;
+}
+
+.dx-popup-content {
+  max-height: calc(90vh - 60px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ========================================
+   Large Desktop (1400px+)
+   ======================================== */
+
+@media (min-width: 1400px) {
+  .tasks-container {
+    padding: 20px 40px;
+  }
+}
+
+/* ========================================
+   Desktop (1024px - 1399px)
+   ======================================== */
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .tasks-container {
+    padding: 20px;
+  }
+}
+
+/* ========================================
+   Tablet (768px - 1023px)
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tasks-container {
+    padding: 16px;
+  }
+
+  .tasks-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .tabs-container {
+    overflow-x: auto;
+  }
+
   .filters-row {
     flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters-row > * {
+    width: 100% !important;
+    min-width: unset;
+  }
+
+  .tasks-grid-container {
+    padding: 16px;
+  }
+
+  .dx-datagrid {
+    font-size: 13px;
   }
   
+  /* Popup width on tablet */
+  .dx-overlay-content.dx-popup-normal {
+    max-width: 90vw !important;
+  }
+}
+
+/* ========================================
+   Small Tablet (576px - 767px)
+   ======================================== */
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .tasks-container {
+    padding: 12px;
+  }
+
+  .tasks-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+
+  .tasks-header h1 {
+    font-size: 24px;
+  }
+
+  .tabs-container {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .tab-button {
+    width: 100%;
+    text-align: left;
+  }
+
+  .filters-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .filters-row > * {
     width: 100% !important;
   }
-  
-  .tabs-container {
-    flex-direction: column;
+
+  .tasks-grid-container {
+    padding: 12px;
+  }
+
+  .task-form {
+    padding: 14px;
+  }
+
+  .form-buttons {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .form-buttons .dx-button {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .dx-datagrid {
+    font-size: 12px;
+  }
+
+  .action-buttons .dx-button {
+    min-width: 28px;
+    min-height: 28px;
+    padding: 4px !important;
   }
   
+  /* Bottom sheet for small tablet */
+  .dx-overlay-content.dx-popup-normal {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    max-height: 85vh !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    top: auto !important;
+    transform: none !important;
+    border-radius: 16px 16px 0 0 !important;
+  }
+}
+
+/* ========================================
+   Mobile (480px - 575px)
+   ======================================== */
+
+@media (min-width: 480px) and (max-width: 575px) {
+  .tasks-container {
+    padding: 10px;
+  }
+
+  .tasks-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .tasks-header h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+  }
+
+  .tasks-header .dx-button {
+    width: 100%;
+  }
+
+  .tabs-container {
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px;
+  }
+
   .tab-button {
     width: 100%;
+    padding: 10px 16px;
+    text-align: left;
+  }
+
+  .filters-container {
+    padding: 12px;
+  }
+
+  .filters-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .filters-row > * {
+    width: 100% !important;
+    min-width: unset;
+  }
+
+  .tasks-grid-container {
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .dx-datagrid {
+    font-size: 11px;
+  }
+
+  .dx-datagrid-headers {
+    font-size: 11px;
+  }
+
+  .dx-datagrid-rowsview .dx-row > td {
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+
+  .action-buttons {
+    gap: 4px;
+  }
+
+  .action-buttons .dx-button {
+    min-width: 30px !important;
+    min-height: 30px !important;
+    padding: 4px !important;
+  }
+
+  .action-buttons .dx-button i {
+    font-size: 14px;
+  }
+
+  .dx-datagrid .dx-column-indicators,
+  .dx-datagrid .dx-header-filter {
+    display: none;
+  }
+
+  .dx-datagrid-pager {
+    padding: 8px 4px;
+  }
+
+  .dx-page-sizes {
+    display: none;
+  }
+
+  .dx-datagrid .dx-datagrid-search-panel {
+    width: 100% !important;
+    margin-bottom: 8px;
+  }
+
+  .dx-datagrid .dx-toolbar-items-container {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+  
+  /* Mobile popup - bottom sheet */
+  .dx-overlay-content.dx-popup-normal {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    max-height: 85vh !important;
+    margin: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    top: auto !important;
+    transform: none !important;
+    border-radius: 16px 16px 0 0 !important;
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .dx-popup-title {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 17px;
+    padding: 12px;
+  }
+
+  .dx-popup-content {
+    max-height: calc(85vh - 55px) !important;
+  }
+
+  .dx-popup-content .task-form {
+    padding: 12px;
+  }
+
+  .task-form .dx-field-item {
+    margin-bottom: 10px;
+  }
+
+  .task-form .dx-textbox,
+  .task-form .dx-datebox,
+  .task-form .dx-selectbox {
+    min-height: 40px;
+  }
+
+  .task-form .dx-texteditor-input {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .task-form .dx-textarea .dx-texteditor-input {
+    min-height: 55px;
+  }
+
+  .form-buttons {
+    flex-direction: column-reverse;
+    gap: 8px;
+    margin-top: 14px;
+    padding-top: 12px;
+    position: sticky;
+    bottom: 0;
+    background: white;
+  }
+
+  .form-buttons .dx-button {
+    width: 100%;
+    min-width: unset;
+    min-height: 44px;
+  }
+}
+
+/* ========================================
+   Small Mobile (375px - 479px)
+   ======================================== */
+
+@media (min-width: 375px) and (max-width: 479px) {
+  .tasks-container {
+    padding: 8px;
+  }
+
+  .tasks-header h1 {
+    font-size: 21px;
+  }
+
+  .tasks-grid-container {
+    padding: 8px;
+  }
+
+  .action-buttons .dx-button {
+    min-width: 28px !important;
+    min-height: 28px !important;
+  }
+
+  .action-buttons .dx-button i {
+    font-size: 13px;
+  }
+  
+  .dx-overlay-content.dx-popup-normal {
+    max-height: 90vh !important;
+  }
+
+  .dx-popup-title {
+    font-size: 16px !important;
+    padding: 12px !important;
+  }
+
+  .dx-popup-content .task-form {
+    padding: 10px !important;
+  }
+}
+
+/* ========================================
+   Very Small Mobile (< 375px)
+   ======================================== */
+
+@media (max-width: 374px) {
+  .tasks-container {
+    padding: 6px;
+  }
+
+  .tasks-header h1 {
+    font-size: 20px;
+  }
+
+  .tabs-container,
+  .filters-container,
+  .tasks-grid-container {
+    padding: 8px;
+  }
+
+  .task-form {
+    padding: 8px;
+  }
+
+  .task-form .dx-field-item {
+    margin-bottom: 8px;
+  }
+
+  .task-form .dx-field-item-label-text {
+    font-size: 12px;
+  }
+
+  .task-form .dx-texteditor-input {
+    font-size: 13px;
+    padding: 7px 8px;
+  }
+
+  .task-form .dx-textarea .dx-texteditor-input {
+    min-height: 50px;
+  }
+
+  .form-buttons {
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+
+  .form-buttons .dx-button {
+    min-height: 42px;
+    font-size: 13px;
+  }
+
+  .dx-datagrid {
+    font-size: 10px;
+  }
+
+  .dx-datagrid-rowsview .dx-row > td {
+    padding: 4px 2px;
+  }
+
+  .action-buttons .dx-button {
+    min-width: 26px !important;
+    min-height: 26px !important;
+  }
+  
+  .dx-overlay-content.dx-popup-normal {
+    max-height: 92vh !important;
+  }
+
+  .dx-popup-title {
+    font-size: 15px !important;
+    padding: 10px !important;
+  }
+
+  .dx-popup-content .task-form {
+    padding: 8px !important;
+  }
+}
+
+/* ========================================
+   Landscape Mode on Mobile
+   ======================================== */
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .tasks-header {
+    margin-bottom: 10px;
+  }
+
+  .tabs-container {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 6px;
+  }
+
+  .tab-button {
+    padding: 8px 16px;
+  }
+
+  .tasks-grid-container {
+    padding: 10px;
+  }
+
+  .dx-datagrid-rowsview {
+    max-height: 300px;
+  }
+  
+  /* Popup in landscape - wider, not bottom sheet */
+  .dx-overlay-content.dx-popup-normal {
+    width: 90vw !important;
+    max-width: 800px !important;
+    height: auto !important;
+    max-height: 85vh !important;
+    left: 50% !important;
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    border-radius: 12px !important;
+  }
+
+  .dx-popup-content {
+    max-height: 70vh !important;
+  }
+
+  .task-form .dx-textarea .dx-texteditor-input {
+    min-height: 45px;
+  }
+
+  .form-buttons {
+    flex-direction: row;
+    margin-top: 10px;
+    padding-top: 8px;
+    position: relative;
+  }
+
+  .form-buttons .dx-button {
+    flex: 1;
+    min-height: 38px;
+  }
+}
+
+/* ========================================
+   Touch Device Optimization
+   ======================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .task-form .dx-textbox,
+  .task-form .dx-datebox,
+  .task-form .dx-selectbox {
+    min-height: 44px;
+  }
+
+  .form-buttons .dx-button,
+  .tab-button {
+    min-height: 44px;
+  }
+
+  .dx-datagrid-rowsview .dx-row {
+    min-height: 48px;
+  }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+  .tasks-container {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .tasks-header .dx-button,
+  .action-buttons,
+  .tabs-container,
+  .filters-container {
+    display: none;
+  }
+
+  .tasks-grid-container {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .dx-datagrid .dx-row:hover {
+    background-color: transparent !important;
+  }
+
+  .dx-datagrid-rowsview {
+    max-height: none !important;
+  }
+  
+  .dx-overlay-wrapper {
+    display: none !important;
+  }
+}
+
+/* ========================================
+   Accessibility
+   ======================================== */
+
+.task-form .dx-texteditor:focus-visible,
+.form-buttons .dx-button:focus-visible,
+.tab-button:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+.task-form .dx-texteditor,
+.form-buttons .dx-button,
+.tab-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.task-form .dx-texteditor:active:not(.dx-state-disabled) {
+  transform: scale(0.995);
+}
+
+.form-buttons .dx-button:active:not(.dx-state-disabled) {
+  transform: scale(0.97);
+}
+
+.tab-button:active {
+  transform: scale(0.98);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .dx-overlay-content.dx-popup-normal {
+    animation: none !important;
   }
 }

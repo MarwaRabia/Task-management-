@@ -1,0 +1,412 @@
+/* Project Form Container */
+.project-form {
+  width: 100%;
+  max-width: 100%;
+  padding: clamp(16px, 3vw, 24px);
+  background: white;
+  border-radius: clamp(8px, 1.5vw, 12px);
+  box-sizing: border-box;
+}
+
+/* Form Styling */
+.project-form .dx-form {
+  width: 100%;
+}
+
+/* Form Items Spacing */
+.project-form .dx-field-item {
+  margin-bottom: clamp(16px, 3vw, 20px);
+  padding: 0;
+}
+
+.project-form .dx-field-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Labels */
+.project-form .dx-field-item-label {
+  padding-bottom: 8px;
+}
+
+.project-form .dx-field-item-label-text {
+  font-size: clamp(13px, 2.5vw, 14px);
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Input Fields */
+.project-form .dx-textbox,
+.project-form .dx-datebox,
+.project-form .dx-selectbox {
+  width: 100%;
+  border-radius: 6px;
+  min-height: 44px; /* Touch-friendly */
+}
+
+.project-form .dx-texteditor-input {
+  font-size: clamp(14px, 2.5vw, 15px);
+  padding: clamp(10px, 2vw, 12px);
+  line-height: 1.5;
+}
+
+/* TextArea for Description */
+.project-form .dx-textbox.dx-editor-filled .dx-texteditor-input {
+  min-height: 70px;
+  resize: vertical;
+}
+
+/* Input Focus State */
+.project-form .dx-texteditor.dx-state-focused {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+/* DateBox and SelectBox Icons */
+.project-form .dx-dropdowneditor-button {
+  width: clamp(36px, 8vw, 44px);
+  min-width: 36px;
+}
+
+.project-form .dx-dropdowneditor-icon {
+  font-size: clamp(16px, 3vw, 18px);
+}
+
+/* Group Items (Side by Side Fields) */
+.project-form .dx-layout-manager .dx-field-item-content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Two Column Layout for Dates */
+.project-form .dx-group-colcount-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: clamp(12px, 2.5vw, 16px);
+}
+
+/* Validation Messages */
+.project-form .dx-invalid-message {
+  font-size: clamp(11px, 2vw, 12px);
+  color: #d32f2f;
+  margin-top: 4px;
+  padding: 4px 0;
+}
+
+.project-form .dx-texteditor.dx-invalid {
+  border-color: #d32f2f;
+}
+
+.project-form .dx-texteditor.dx-invalid.dx-state-focused {
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.1);
+}
+
+/* Required Indicator */
+.project-form .dx-field-item-required-mark {
+  color: #d32f2f;
+  font-size: clamp(14px, 2.5vw, 16px);
+  margin-left: 4px;
+}
+
+/* Form Buttons Container */
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: clamp(10px, 2vw, 12px);
+  margin-top: clamp(24px, 4vw, 32px);
+  padding-top: clamp(20px, 3vw, 24px);
+  border-top: 1px solid #e8e8e8;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.form-buttons .dx-button {
+  min-width: clamp(100px, 20vw, 120px);
+  min-height: 44px; /* Touch-friendly */
+  border-radius: 6px;
+  font-size: clamp(14px, 2.5vw, 15px);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  padding: clamp(8px, 2vw, 10px) clamp(16px, 3vw, 20px);
+}
+
+/* Cancel Button */
+.form-buttons .dx-button:first-child {
+  background-color: #f5f5f5;
+  border: 1px solid #d9d9d9;
+  color: #595959;
+}
+
+.form-buttons .dx-button:first-child:hover:not(.dx-state-disabled) {
+  background-color: #e8e8e8;
+  border-color: #bfbfbf;
+}
+
+/* Submit Button (Create/Update) */
+.form-buttons .dx-button.dx-button-default {
+  background-color: #1890ff;
+  border: 1px solid #1890ff;
+  color: white;
+}
+
+.form-buttons .dx-button.dx-button-default:hover:not(.dx-state-disabled) {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.3);
+}
+
+/* Disabled State */
+.form-buttons .dx-button.dx-state-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading State */
+.form-buttons .dx-button .dx-button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Popup/Modal Container (if form is in a popup) */
+.dx-popup-content .project-form {
+  padding: clamp(20px, 4vw, 28px);
+}
+
+.dx-popup-title {
+  font-size: clamp(18px, 3.5vw, 20px);
+  font-weight: 600;
+  padding: clamp(16px, 3vw, 20px);
+}
+
+/* Responsive Tablet */
+@media (max-width: 768px) {
+  .project-form {
+    padding: 16px;
+  }
+
+  /* Stack date fields on tablet if needed */
+  .project-form .dx-group-colcount-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Make buttons full width on smaller tablets */
+  .form-buttons {
+    justify-content: stretch;
+  }
+
+  .form-buttons .dx-button {
+    flex: 1 1 calc(50% - 6px);
+    min-width: unset;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .project-form {
+    padding: 12px;
+  }
+
+  /* Full width buttons on mobile */
+  .form-buttons {
+    flex-direction: column-reverse; /* Cancel button below submit */
+    gap: 8px;
+  }
+
+  .form-buttons .dx-button {
+    width: 100%;
+    min-width: unset;
+  }
+
+  /* Reduce spacing on mobile */
+  .project-form .dx-field-item {
+    margin-bottom: 14px;
+  }
+
+  .form-buttons {
+    margin-top: 20px;
+    padding-top: 16px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 375px) {
+  .project-form {
+    padding: 10px;
+  }
+
+  .project-form .dx-texteditor-input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .form-buttons .dx-button {
+    min-height: 42px;
+    font-size: 14px;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .project-form {
+    padding: 12px;
+  }
+
+  .project-form .dx-field-item {
+    margin-bottom: 12px;
+  }
+
+  .form-buttons {
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+
+  /* Keep buttons side by side in landscape */
+  .form-buttons {
+    flex-direction: row;
+  }
+
+  .form-buttons .dx-button {
+    flex: 1;
+  }
+}
+
+/* Touch Device Optimization */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch targets */
+  .project-form .dx-textbox,
+  .project-form .dx-datebox,
+  .project-form .dx-selectbox {
+    min-height: 48px;
+  }
+
+  .form-buttons .dx-button {
+    min-height: 48px;
+  }
+
+  /* Remove hover effects on touch devices */
+  .form-buttons .dx-button:hover {
+    transform: none;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .project-form {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .form-buttons .dx-button {
+    border-width: 1px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .project-form {
+    background: #2a2a2a;
+  }
+
+  .project-form .dx-field-item-label-text {
+    color: #e0e0e0;
+  }
+
+  .project-form .dx-texteditor {
+    background-color: #333;
+    border-color: #444;
+  }
+
+  .project-form .dx-texteditor-input {
+    color: #e0e0e0;
+  }
+
+  .form-buttons {
+    border-top-color: #444;
+  }
+
+  .form-buttons .dx-button:first-child {
+    background-color: #3a3a3a;
+    border-color: #555;
+    color: #e0e0e0;
+  }
+
+  .form-buttons .dx-button:first-child:hover:not(.dx-state-disabled) {
+    background-color: #444;
+    border-color: #666;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .form-buttons {
+    display: none;
+  }
+
+  .project-form {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
+
+/* Focus Visible (Accessibility) */
+.project-form .dx-texteditor:focus-visible {
+  outline: 2px solid #1890ff;
+  outline-offset: 2px;
+}
+
+.form-buttons .dx-button:focus-visible {
+  outline: 2px solid #1890ff;
+  outline-offset: 2px;
+}
+
+/* Smooth Transitions */
+.project-form .dx-texteditor,
+.form-buttons .dx-button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Loading Spinner (if you add one) */
+.form-buttons .dx-button.dx-state-disabled .dx-loadindicator {
+  margin-right: 8px;
+}
+
+/* Error State Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.project-form .dx-invalid.dx-texteditor {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Placeholder Styling */
+.project-form .dx-texteditor-input::placeholder {
+  color: #bbb;
+  opacity: 1;
+  font-size: clamp(13px, 2.5vw, 14px);
+}
+
+.project-form .dx-texteditor-input::-ms-input-placeholder {
+  color: #bbb;
+}
+
+/* Improved Spacing for Better Visual Hierarchy */
+.project-form .dx-layout-manager {
+  padding: 0;
+}
+
+.project-form .dx-field-item-content {
+  width: 100%;
+}
+
+/* Better visual feedback on interaction */
+.project-form .dx-texteditor:active:not(.dx-state-disabled) {
+  transform: scale(0.995);
+}
+
+.form-buttons .dx-button:active:not(.dx-state-disabled) {
+  transform: scale(0.97);
+}

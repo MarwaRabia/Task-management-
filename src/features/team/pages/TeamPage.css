@@ -81,7 +81,9 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   align-items: end;
 }
-
+.dx-widget.dx-visibility-change-handler{
+  max-width: 100% !important;
+}
 /* User Cell */
 .user-cell {
   display: flex;
@@ -120,7 +122,7 @@
   gap: 4px;
 }
 
-.user-name {
+.user-name1 {
   font-weight: 500;
   color: #333;
 }
@@ -179,7 +181,7 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .team-stats {
     grid-template-columns: 1fr;
   }
@@ -189,9 +191,9 @@
     align-items: flex-start;
     gap: 16px;
   }
-}
+} */
 /* ---------------------------------------------------------- */
-/* إضافة هذه الأنماط لملف TeamPage.css الموجود */
+
 
 /* User Cell with Avatar */
 .user-cell {
@@ -230,7 +232,7 @@
   gap: 2px;
 }
 
-.user-name {
+.user-name1 {
   font-weight: 600;
   color: #1a1a1a;
   font-size: 14px;
@@ -251,6 +253,7 @@
   display: flex;
   gap: 4px;
   justify-content: center;
+  flex-wrap: nowrap;
 }
 
 /* Role Badges */
@@ -264,13 +267,24 @@
 }
 
 .role-badge.role-admin {
-  background: #dc3545;
+  background: #ffebee;
+  color: #c62828;
 }
 
 .role-badge.role-leader {
-  background: #007bff;
+ 
+  background: #e3f2fd;
+  color: #1565c0;
 }
 
 .role-badge.role-member {
-  background: #28a745;
+  background: #f3e5f5;
+  color: #6a1b9a;
 }
+
+
+
+/* ========================================
+   Base Styles - Team Page
+   ======================================== */
+

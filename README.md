@@ -1,75 +1,103 @@
-# React + TypeScript + Vite
+# 🗂️ Task Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Overview
 
-Currently, two official plugins are available:
+**Task Management System** is a full-stack web application that allows teams to manage projects and tasks efficiently.  
+Each project can have multiple tasks, and users can easily create, edit, and manage them.  
+Every task supports **comments, file attachments, and real-time updates**, providing a seamless team collaboration experience.  
+The system also includes an **interactive dashboard** and **reporting page** with analytical charts for better project insights.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- 🔐 **User Authentication & Authorization** (JWT-based)
+- 🗃️ **Project & Task Management** (Create, Edit, Delete)
+- 💬 **Comments & File Attachments** for each task
+- 🔔 **Real-time Notifications** using SignalR
+- 📊 **Dashboard & Reports** with data visualization
+- 🧩 **Swagger API Documentation**
+- 🏗️ **Clean Architecture / Layered Design**
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### **Frontend**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🔼 React
+- 🧠 Redux
+- 🌐 Axios
+- 📊 DevExtreme Components
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### **Backend**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- 🔷 ASP.NET Core
+- 🗄️ SQL Server
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### **Tools**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- 🧾 Swagger (API Documentation)
+- 🧰 Git & GitHub (Version Control)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## ⚙️ Architecture Highlights
+
+- **Authentication:** JWT-based system for secure login and access.
+- **Real-time Communication:** SignalR for instant updates and notifications.
+- **File Upload System:** Manage images and documents for each project/task.
+- **Clean Architecture:** Well-structured layers for scalability and maintainability.
+- **RESTful API:** Built and documented using Swagger.
+
+---
+
+## 📈 Dashboard & Reports
+
+- Visual analytics for:
+  - Project progress
+  - Task distribution
+  - Team performance
+- Interactive charts built with **DevExtreme**.
+
+---
+
+## 📷 Preview / Screenshots
+![Login Page](src/assets/login.png)
+
+
+![Dashboard Page](src/assets/dashboard.png)
+
+
+![Projects Page](src/assets/projects.png)
+
+
+![Tasks Page](src/assets/tasks.png)
+
+
+![Reports Page](src/assets/reports.png)
+
+
+![Responsive Design ](src/assets/responsive.png)
+
+
+
+## 🌐 Live Demo 
+
+
+
+## ⚡ Live Demo
+
+Check it out here: [Task Management System](https://task-management-livid-theta.vercel.app/)
+
+## 🔮 Future Improvements
+
+- Add user roles & permissions management page.
+
+- Implement task deadline reminders.
+
+- Enhance report filters and export to PDF/Excel.
+
+- Add dark mode UI option.
+
+## ⭐ If you like this project, don’t forget to give it a star on GitHub!

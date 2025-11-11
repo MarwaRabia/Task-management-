@@ -12,6 +12,8 @@ import { Button } from "devextreme-react/button";
 import { useAppDispatch } from "../../../app/hooks";
 import { createProject, updateProject } from "../projectsSlice";
 import notify from "devextreme/ui/notify";
+// import  './ProjectForm.css'
+import "./Projects.css";
 
 interface ProjectFormProps {
   project?: any;
@@ -67,9 +69,9 @@ const ProjectForm = ({ project, onClose, editMode }: ProjectFormProps) => {
       e.preventDefault();
     }
     if (
-      !formData.name||
+      !formData.name ||
       !formData.description ||
-      !formData.createdAt 
+      !formData.createdAt
       // !formData.priority
     ) {
       // notify("Please fill all required fields", "warning", 2000);
@@ -139,7 +141,7 @@ const ProjectForm = ({ project, onClose, editMode }: ProjectFormProps) => {
           editorOptions={{
             height: 70, //
             placeholder: "Enter project description...",
-             valueChangeEvent: "keyup"
+            valueChangeEvent: "keyup",
           }}
         >
           <Label text="Description" />
