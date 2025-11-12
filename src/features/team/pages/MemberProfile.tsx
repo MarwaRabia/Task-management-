@@ -60,10 +60,8 @@ const MemberProfile = () => {
   const loadMemberDetails = async (userId: number) => {
     setLoading(true);
     try {
-      // استدعاء الـ endpoint الجديد /profile
       const response = await api.get(`/users/${userId}/profile`);
 
-      // التأكد من وجود البيانات
       if (response.data.success && response.data.data) {
        
         setMember(response.data.data);
@@ -77,7 +75,6 @@ const MemberProfile = () => {
         "error",
         2000
       );
-      // في حالة الخطأ، يمكن العودة للصفحة السابقة
       // navigate("/team");
     } finally {
       setLoading(false);

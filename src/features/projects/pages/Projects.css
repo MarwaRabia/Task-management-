@@ -129,9 +129,20 @@
   max-height: 90vh;
 }
 
+.dx-popup-wrapper {
+  overflow: visible !important;
+}
+
 .dx-popup-content {
-  overflow-y: auto;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
   -webkit-overflow-scrolling: touch;
+  max-height: calc(90vh - 60px);
+  overscroll-behavior: contain;
+}
+
+.dx-scrollable-content {
+  overflow: visible !important;
 }
 
 .dx-popup-title {
@@ -139,11 +150,13 @@
   font-size: clamp(16px, 4vw, 20px);
   padding: clamp(12px, 3vw, 16px) !important;
   border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0;
 }
 
 /* Form inside popup */
 .dx-popup-content .project-form {
   padding: clamp(12px, 3vw, 20px) !important;
+  min-height: min-content;
 }
 
 .project-form .dx-field-item {
@@ -158,6 +171,20 @@
 .project-form .dx-texteditor-input {
   font-size: clamp(13px, 2.8vw, 14px);
   padding: clamp(8px, 2vw, 10px);
+}
+
+/* Fix for DevExtreme scrollable */
+.dx-popup-content .dx-scrollable {
+  height: auto !important;
+  max-height: 100% !important;
+}
+
+.dx-popup-content .dx-scrollable-container {
+  overflow: visible !important;
+}
+
+.dx-popup-content .dx-scrollable-content {
+  overflow: visible !important;
 }
 
 /* ========================================
@@ -359,6 +386,7 @@
     transform: none !important;
     border-radius: 16px 16px 0 0 !important;
     animation: slideUp 0.3s ease-out;
+    overflow: visible !important;
   }
   
   @keyframes slideUp {
@@ -376,11 +404,20 @@
     position: sticky;
     top: 0;
     background: white;
-    z-index: 1;
+    z-index: 10;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .dx-popup-content {
+    max-height: calc(85vh - 60px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
   }
 
   .dx-popup-content .project-form {
     padding: 12px 16px !important;
+    overflow: visible !important;
   }
 
   .form-buttons {
@@ -442,6 +479,13 @@
     width: 100vw !important;
     max-height: 90vh !important;
     border-radius: 12px 12px 0 0 !important;
+    overflow: visible !important;
+  }
+
+  .dx-popup-content {
+    max-height: calc(90vh - 60px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
   }
 
   .dx-popup-title {
@@ -497,6 +541,13 @@
     width: 100vw !important;
     max-height: 92vh !important;
     border-radius: 12px 12px 0 0 !important;
+    overflow: visible !important;
+  }
+
+  .dx-popup-content {
+    max-height: calc(92vh - 60px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
   }
 
   .dx-popup-title {
